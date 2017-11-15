@@ -1,6 +1,6 @@
 {% set name = "googleapis-common-protos" %}
-{% set version = "1.5.2" %}
-{% set sha256 = "f94cc66efba677a086b8b17b1240239433495b77631cd410f70151a8ff14435d" %}
+{% set version = "1.5.3" %}
+{% set sha256 = "c075eddaa2628ab519e01b7d75b76e66c40eaa50fc52758d8225f84708950ef2" %}
 
 package:
   name: {{ name|lower }}
@@ -42,3 +42,4 @@ about:
 extra:
   recipe-maintainers:
     - parthea
+    - tswast
