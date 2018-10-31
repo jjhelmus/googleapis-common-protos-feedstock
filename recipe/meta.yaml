@@ -1,6 +1,6 @@
 {% set name = "googleapis-common-protos" %}
-{% set version = "1.5.3" %}
-{% set sha256 = "c075eddaa2628ab519e01b7d75b76e66c40eaa50fc52758d8225f84708950ef2" %}
+{% set version = "1.5.4" %}
+{% set sha256 = "13dbcd78923f77ef5b52552b4c5149f235a6a9d9d32423d331ad264de48484a3" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
