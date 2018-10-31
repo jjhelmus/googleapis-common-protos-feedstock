@@ -1,6 +1,6 @@
 {% set name = "googleapis-common-protos" %}
-{% set version = "1.5.4" %}
-{% set sha256 = "13dbcd78923f77ef5b52552b4c5149f235a6a9d9d32423d331ad264de48484a3" %}
+{% set version = "1.5.5" %}
+{% set sha256 = "0946967c4c29b1339bb211949e1e17dbe0ae9ff8265fafa7bf4cf2164ef5a3b1" %}
 
 package:
   name: {{ name|lower }}
