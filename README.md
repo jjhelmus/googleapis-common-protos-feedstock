@@ -1,24 +1,35 @@
-About googleapis-common-protos
-==============================
+About googleapis-common-protos-feedstock
+========================================
 
 Home: https://github.com/googleapis/googleapis
 
-Package license: Apache-2.0
+Package license: Apache 2.0
 
 Feedstock license: BSD 3-Clause
 
 Summary: Common protobufs used in Google APIs
 
-This library contains the python classes generated from the common protos in the googleapis repository.
+This package does not include the grpc extra requirements.
+
+This repository contains the original interface definitions of public
+Google APIs that support both REST and gRPC protocols. Reading the original
+interface definitions can provide a better understanding of Google APIs and
+help you to utilize them more efficiently. You can also use these definitions
+with open source tools to generate client libraries, documentation,
+and other artifacts.
+
 
 Current build status
 ====================
 
 
 <table><tr>
+    
     <td>All platforms:</td>
     <td>
-      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5456&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/googleapis-common-protos-feedstock?branchName=master">
+      </a>
     </td>
   </tr>
 </table>
@@ -29,20 +40,21 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-googleapis--common--protos-green.svg)](https://anaconda.org/conda-forge/googleapis-common-protos) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/googleapis-common-protos.svg)](https://anaconda.org/conda-forge/googleapis-common-protos) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/googleapis-common-protos.svg)](https://anaconda.org/conda-forge/googleapis-common-protos) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/googleapis-common-protos.svg)](https://anaconda.org/conda-forge/googleapis-common-protos) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-googleapis--common--protos--grpc-green.svg)](https://anaconda.org/conda-forge/googleapis-common-protos-grpc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/googleapis-common-protos-grpc.svg)](https://anaconda.org/conda-forge/googleapis-common-protos-grpc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/googleapis-common-protos-grpc.svg)](https://anaconda.org/conda-forge/googleapis-common-protos-grpc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/googleapis-common-protos-grpc.svg)](https://anaconda.org/conda-forge/googleapis-common-protos-grpc) |
 
-Installing googleapis-common-protos
-===================================
+Installing googleapis-common-protos-feedstock
+=============================================
 
-Installing `googleapis-common-protos` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `googleapis-common-protos-feedstock` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `googleapis-common-protos` can be installed with:
+Once the `conda-forge` channel has been enabled, `googleapis-common-protos, googleapis-common-protos-grpc` can be installed with:
 
 ```
-conda install googleapis-common-protos
+conda install googleapis-common-protos googleapis-common-protos-grpc
 ```
 
 It is possible to list all of the versions of `googleapis-common-protos` available on your platform with:
@@ -90,17 +102,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating googleapis-common-protos-feedstock
-===========================================
+Updating googleapis-common-protos-feedstock-feedstock
+=====================================================
 
-If you would like to improve the googleapis-common-protos recipe or build a new
+If you would like to improve the googleapis-common-protos-feedstock recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/googleapis-common-protos-feedstock are
+Note that all branches in the conda-forge/googleapis-common-protos-feedstock-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
@@ -115,6 +127,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@BrentDorsey](https://github.com/BrentDorsey/)
 * [@parthea](https://github.com/parthea/)
 * [@tswast](https://github.com/tswast/)
 
