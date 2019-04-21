@@ -18,7 +18,7 @@ outputs:
   - name: {{ name }}
     build:
       noarch: python
-      script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --verbose"
+      script: python -m pip install . --no-deps --ignore-installed --verbose
     requirements:
       host:
         - python
