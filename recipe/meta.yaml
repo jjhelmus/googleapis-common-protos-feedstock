@@ -1,7 +1,7 @@
 {% set name = "googleapis-common-protos" %}
 {% set version = "1.5.9" %}
 {% set sha256 = "627ec53fab43d06c1b5c950e217fa9819e169daf753111a7f244e94bf8fb3384" %}
-{% set data = load_setup_py_data() %}
+
 package:
   name: {{ name|lower }}-feedstock
   version: {{ version }}
@@ -341,10 +341,10 @@ outputs:
         - grpc.framework.common
         - grpc.framework.interfaces.face
     about:
-      home: {{ data.get('url') }}
-      license: {{ data.get('license') }}
+      home: https://github.com/googleapis/googleapis
+      license: Apache 2.0
       license_family: APACHE
-      summary: {{ data.get('description') }}
+      summary: Common protobufs used in Google APIs
       description: |
         {{ name }}-grpc installs {{ name }} and the grpc extra requirements.
 
@@ -359,10 +359,10 @@ outputs:
       dev_url: https://github.com/googleapis/googleapis
 
 about:
-  home: {{ data.get('url') }}
-  license: {{ data.get('license') }}
+  home: https://github.com/googleapis/googleapis
+  license: Apache 2.0
   license_family: APACHE
-  summary: {{ data.get('description') }}
+  summary: Common protobufs used in Google APIs
   description: |
     This package does not include the grpc extra requirements.
 
