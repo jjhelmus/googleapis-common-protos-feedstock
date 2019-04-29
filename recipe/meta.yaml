@@ -33,7 +33,7 @@ outputs:
         - setuptools >=34.0.0
       run:
         - python
-        - {{ pin_compatible('protobuf', min_pin='x', max_pin='x') }}
+        - protobuf
     test:
       imports:
         - google.api
@@ -177,7 +177,7 @@ outputs:
         - grpcio >=1.0.0
       run:
         - {{ pin_subpackage(name, min_pin='x.x', max_pin='x.x') }}
-        - {{ pin_compatible('grpcio') }}
+        - grpcio
     test:
       imports:
         - google.api
