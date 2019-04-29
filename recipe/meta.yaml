@@ -1,6 +1,6 @@
 {% set name = "googleapis-common-protos" %}
-{% set version = "1.5.9" %}
-{% set sha256 = "627ec53fab43d06c1b5c950e217fa9819e169daf753111a7f244e94bf8fb3384" %}
+  {% set version = "1.5.9" %}
+  {% set sha256 = "627ec53fab43d06c1b5c950e217fa9819e169daf753111a7f244e94bf8fb3384" %}
 
 package:
   name: {{ name|lower }}-feedstock
@@ -11,22 +11,29 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  noarch: python
-  number: 1
+  number: 2
+  skip: True  # [win and vc<14]
+
+requirements:
+  host:
+    - python
+    - pip >=18.1
+    - setuptools >=34.0.0
 
 outputs:
   - name: {{ name }}
     build:
-      noarch: python
-      script: python -m pip install . --no-deps --ignore-installed --verbose
+      script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --verbose"
+      skip: True  # [win and vc<14]
     requirements:
       host:
         - python
         - pip >=18.1
-        - protobuf >=3.0.0
+        - protobuf >=3.6.0
         - setuptools >=34.0.0
       run:
-        - {{ pin_compatible('protobuf', min_pin='x', max_pin='x') }}
+        - python
+        - protobuf
     test:
       imports:
         - google.api
@@ -76,8 +83,6 @@ outputs:
         - google.protobuf.empty_pb2
         - google.protobuf.field_mask_pb2
         - google.protobuf.internal
-        - google.protobuf.internal._api_implementation
-        - google.protobuf.internal._parameterized
         - google.protobuf.internal.any_test_pb2
         - google.protobuf.internal.api_implementation
         - google.protobuf.internal.containers
@@ -130,8 +135,6 @@ outputs:
         - google.protobuf.message_factory
         - google.protobuf.proto_builder
         - google.protobuf.pyext
-        - google.protobuf.pyext._message
-        - google.protobuf.pyext.cpp_message
         - google.protobuf.pyext.python_pb2
         - google.protobuf.reflection
         - google.protobuf.service
@@ -145,17 +148,6 @@ outputs:
         - google.protobuf.text_format
         - google.protobuf.timestamp_pb2
         - google.protobuf.type_pb2
-        - google.protobuf.unittest_arena_pb2
-        - google.protobuf.unittest_custom_options_pb2
-        - google.protobuf.unittest_import_pb2
-        - google.protobuf.unittest_import_public_pb2
-        - google.protobuf.unittest_mset_pb2
-        - google.protobuf.unittest_mset_wire_format_pb2
-        - google.protobuf.unittest_no_arena_import_pb2
-        - google.protobuf.unittest_no_arena_pb2
-        - google.protobuf.unittest_no_generic_services_pb2
-        - google.protobuf.unittest_pb2
-        - google.protobuf.unittest_proto3_arena_pb2
         - google.protobuf.util
         - google.protobuf.util.json_format_proto3_pb2
         - google.protobuf.wrappers_pb2
@@ -178,14 +170,14 @@ outputs:
 
   - name: {{ name }}-grpc
     build:
-      noarch: python
+      skip: True  # [win and vc<14]
     requirements:
       host:
         - python
         - grpcio >=1.0.0
       run:
         - {{ pin_subpackage(name, min_pin='x.x', max_pin='x.x') }}
-        - {{ pin_compatible('grpcio') }}
+        - grpcio
     test:
       imports:
         - google.api
@@ -237,8 +229,6 @@ outputs:
         - google.protobuf.empty_pb2
         - google.protobuf.field_mask_pb2
         - google.protobuf.internal
-        - google.protobuf.internal._api_implementation
-        - google.protobuf.internal._parameterized
         - google.protobuf.internal.any_test_pb2
         - google.protobuf.internal.api_implementation
         - google.protobuf.internal.containers
@@ -291,8 +281,6 @@ outputs:
         - google.protobuf.message_factory
         - google.protobuf.proto_builder
         - google.protobuf.pyext
-        - google.protobuf.pyext._message
-        - google.protobuf.pyext.cpp_message
         - google.protobuf.pyext.python_pb2
         - google.protobuf.reflection
         - google.protobuf.service
@@ -306,17 +294,6 @@ outputs:
         - google.protobuf.text_format
         - google.protobuf.timestamp_pb2
         - google.protobuf.type_pb2
-        - google.protobuf.unittest_arena_pb2
-        - google.protobuf.unittest_custom_options_pb2
-        - google.protobuf.unittest_import_pb2
-        - google.protobuf.unittest_import_public_pb2
-        - google.protobuf.unittest_mset_pb2
-        - google.protobuf.unittest_mset_wire_format_pb2
-        - google.protobuf.unittest_no_arena_import_pb2
-        - google.protobuf.unittest_no_arena_pb2
-        - google.protobuf.unittest_no_generic_services_pb2
-        - google.protobuf.unittest_pb2
-        - google.protobuf.unittest_proto3_arena_pb2
         - google.protobuf.util
         - google.protobuf.util.json_format_proto3_pb2
         - google.protobuf.wrappers_pb2
@@ -355,6 +332,12 @@ outputs:
         with open source tools to generate client libraries, documentation,
         and other artifacts.
 
+        **Deprecated Python Versions**
+
+        Python == 2.7
+        - Python 2.7 support will be removed on January 1, 2020.
+        - protobuf does not support Visual C++ 2008, windows py27 package not available
+
       doc_url: https://github.com/googleapis/googleapis/blob/master/README.md
       dev_url: https://github.com/googleapis/googleapis
 
@@ -372,6 +355,12 @@ about:
     help you to utilize them more efficiently. You can also use these definitions
     with open source tools to generate client libraries, documentation,
     and other artifacts.
+
+    **Deprecated Python Versions**
+
+    Python == 2.7
+    - Python 2.7 support will be removed on January 1, 2020.
+    - protobuf does not support Visual C++ 2008, windows py27 package not available
 
   doc_url: https://github.com/googleapis/googleapis/blob/master/README.md
   dev_url: https://github.com/googleapis/googleapis
