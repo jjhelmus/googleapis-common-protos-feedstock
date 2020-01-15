@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
 
 requirements:
@@ -345,6 +345,7 @@ outputs:
 about:
   home: https://github.com/googleapis/googleapis
   license: Apache 2.0
+  license_file: LICENSE
   license_family: APACHE
   summary: Common protobufs used in Google APIs
   description: |
@@ -368,6 +369,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - BrentDorsey
+    - leahecole
     - parthea
     - tswast
-    - BrentDorsey
