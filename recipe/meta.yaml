@@ -1,6 +1,6 @@
 {% set name = "googleapis-common-protos" %}
-  {% set version = "1.6.0" %}
-  {% set sha256 = "e61b8ed5e36b976b487c6e7b15f31bb10c7a0ca7bd5c0e837f4afab64b53a0c6" %}
+  {% set version = "1.51.0" %}
+  {% set sha256 = "013c91704279119150e44ef770086fdbba158c1f978a6402167d47d5409e226e" %}
 
 package:
   name: {{ name|lower }}-feedstock
@@ -320,6 +320,7 @@ outputs:
     about:
       home: https://github.com/googleapis/googleapis
       license: Apache 2.0
+      license_file: LICENSE
       license_file: LICENSE
       license_family: APACHE
       summary: Common protobufs used in Google APIs
