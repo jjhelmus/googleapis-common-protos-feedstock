@@ -319,8 +319,7 @@ outputs:
         - grpc.framework.interfaces.face
     about:
       home: https://github.com/googleapis/googleapis
-      license: Apache 2.0
-      license_file: LICENSE
+      license: Apache-2.0
       license_file: LICENSE
       license_family: APACHE
       summary: Common protobufs used in Google APIs
