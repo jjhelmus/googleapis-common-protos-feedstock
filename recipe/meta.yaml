@@ -1,3 +1,5 @@
+{% set sha256 = "560716c807117394da12cecb0a54da5a451b5cf9866f1d37e9a5e2329a665351" %}
+{% set version = "1.52.0" %}
 {% set name = "googleapis-common-protos" %}
   {% set version = "1.51.0" %}
   {% set sha256 = "013c91704279119150e44ef770086fdbba158c1f978a6402167d47d5409e226e" %}
@@ -11,8 +13,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
-  skip: True  # [win and vc<14]
+  number: 0
+  skip: true  # [win and vc<14]
 
 requirements:
   host:
@@ -23,8 +25,8 @@ requirements:
 outputs:
   - name: {{ name }}
     build:
-      script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --verbose"
-      skip: True  # [win and vc<14]
+      script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --verbose
+      skip: true  # [win and vc<14]
     requirements:
       host:
         - python
@@ -170,7 +172,7 @@ outputs:
 
   - name: {{ name }}-grpc
     build:
-      skip: True  # [win and vc<14]
+      skip: true  # [win and vc<14]
     requirements:
       host:
         - python
