@@ -1,8 +1,6 @@
 {% set sha256 = "560716c807117394da12cecb0a54da5a451b5cf9866f1d37e9a5e2329a665351" %}
 {% set version = "1.52.0" %}
 {% set name = "googleapis-common-protos" %}
-  {% set version = "1.51.0" %}
-  {% set sha256 = "013c91704279119150e44ef770086fdbba158c1f978a6402167d47d5409e226e" %}
 
 package:
   name: {{ name|lower }}-feedstock
